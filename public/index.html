@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel = "stylesheet" href = "main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/886669c669.js"></script>
+  </head>
+  <body>
+    <div class = "container">
+        <div class="item" id = "head">
+            <h1>Livechat</h1>
+        </div>
+        <div class="item" id = "content">
+            <div id = "messages"></div>
+        </div>
+        <div class="item" id = "input">
+            <p id = "typingStatus"></p>
+            <div class = "inputControls">
+                <input type = "text" placeholder="Say something..." id = "userInput"></input>
+                <button id = "inputButton" ><i class="fas fa-paper-plane" id = "planeIcon"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src = "/socket.io/socket.io.js"></script>
+    <script src = "https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src = 'clientScript.js'></script>
+  </body>
+</html>
