@@ -15,10 +15,10 @@ io.on('connection', function(socket){
     console.log('User: ' + socket.id + ' connected to the server.');
     
     socket.broadcast.emit('chat message', "A new user has connected to the chat.");
-    //io.emit('chat message', "A new user has connected to the chat.");
 
     socket.on('chat message', function(msg){
-        io.emit('chat message', msg);
+        var id = socket.id;
+        io.emit('chat message', msg, id);
     });
 
     socket.on('disconnect', function(){

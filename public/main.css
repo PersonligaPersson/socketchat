@@ -126,6 +126,7 @@ body{
       margin: 2px;
       padding: 15px 20px;
       border-radius: 30px;
+      width: 100%;
 }
 
 #robotIcon {
@@ -143,7 +144,12 @@ body{
 }
 
 .messageDiv {
+      width: 100%;
       display: flex;
       flex-direction: row;
       align-items: center;
+}
+
+.messageDiv .messageText {      
+      display: inherit;
 }
