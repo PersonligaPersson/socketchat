@@ -1,4 +1,5 @@
-var express = require('express'); //Getting the express module.
+//var app = require('express')();
+var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -12,7 +13,9 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
 
     console.log('User: ' + socket.id + ' connected to the server.');
+    
     socket.broadcast.emit('chat message', "A new user has connected to the chat.");
+    //io.emit('chat message', "A new user has connected to the chat.");
 
     socket.on('chat message', function(msg){
         io.emit('chat message', msg);

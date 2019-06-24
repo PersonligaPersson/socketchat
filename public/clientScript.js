@@ -19,20 +19,7 @@ $(function() {
         $('#userInput').val('');
     }
 
-    /*
-    $('form').submit(function(e){
-        e.preventDefault(); //This prevents the submit to reload the page.
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-    });
-    */
-
     socket.on('chat message', function(msg){        
-        //$('#messages').append($('<li>').text(msg));
-        //$('#messages').append($('<li>').append('<i class="fas fa-robot"></i>').append(msg)();
-        //$('#messages').append('<i class="fas fa-robot"></i>').after($('<li>').text(msg));
-        //$('#messages').append($('<li>').text(msg));
         var newDiv = document.createElement("div");
         newDiv.setAttribute('class', 'messageDiv');
         var newContent = document.createTextNode(msg);
