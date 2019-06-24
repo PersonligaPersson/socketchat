@@ -19,11 +19,6 @@ $(function() {
         $('#userInput').val('');
     }
 
-    function playAudio(){
-        var audio = new Audio('ljud/pling.mp3');
-        audio.play();
-    }
-
     socket.on('chat message', function(msg, id){
         //console.log("Mottaget id: " + id + " Eget id: " + socket.id);        
 
@@ -35,7 +30,6 @@ $(function() {
         newP.appendChild(newContent);
         if(id != socket.id){
             newP.style.order = -1;
-            playAudio();
         }
         var newIcon = document.createElement("i");
         newIcon.setAttribute('class', "fas fa-robot");

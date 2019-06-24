@@ -24,6 +24,7 @@ io.on('connection', function(socket){
 
     socket.on('disconnect', function(){
         console.log('User: ' + socket.id + ' disconnected from the server.');
+        socket.broadcast.emit('chat message', "A user has disconnected from the chat.");
     });
 
     socket.on('typingMessage', function(){
@@ -32,7 +33,7 @@ io.on('connection', function(socket){
 
     socket.on('noLongerTypingMessage', function(){
         socket.broadcast.emit('userNoLongerTyping', '');
-    })
+    });
 })
 
 http.listen(port, function(){
