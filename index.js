@@ -1,6 +1,10 @@
-var app = require('express')();
+//var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+
+app.use(express.static('public'));
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
@@ -9,10 +13,12 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
 
     console.log('User: ' + socket.id + ' connected to the server.');
-    io.emit('chat message', "A new user has connected to the chat.");
+    
+    socket.broadcast.emit('chat message', "A new user has connected to the chat.");
 
     socket.on('chat message', function(msg){
-        io.emit('chat message', msg);
+        var id = socket.id;
+        io.emit('chat message', msg, id);
     });
 
     socket.on('disconnect', function(){

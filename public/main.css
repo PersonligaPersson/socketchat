@@ -1,0 +1,155 @@
+* {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+}
+
+html {
+      height: 100%;  
+}
+
+body{
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      background-image: linear-gradient(45deg,#003973, #E5E5BE);
+      background-image: linear-gradient()
+}
+
+.container {
+      position: absolute; 
+      width: 400px;
+      height: 600px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+}
+
+.item {
+      background-color: #fff;
+}
+
+#head {
+      display: flex;
+      height: 10%;
+      background-color: #00487C;
+      font-size: 14px;
+      color: #fff;
+      justify-content: center;
+      align-items: center;            
+}
+
+#input {
+      height: 10%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+}
+
+.inputControls {
+      display: inherit;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 10px;
+}
+
+.inputControls > *{
+      padding: 5px;
+      margin: 5px;
+      border-style: solid;
+      border-width: 0px;
+      border-color: #eee;
+      height: 50px;
+      border-radius: 30px;
+}
+
+.inputControls :focus {
+      outline-style: none;
+}
+
+.inputControls input {
+      background-color: #eee;
+      width: 80%;
+      padding: 5px 20px;
+}
+
+.inputControls button {
+      width: 50px;      
+      background-color: #4BB3FD;
+}
+
+#content {
+      padding: 10px;
+      display: flex;
+      height: 75%;
+      justify-content: center;
+      word-wrap: break-word;
+      overflow-y: auto;
+}
+
+#planeIcon {
+      font-size: 20px;
+      padding: 1px 3px 0 0;
+      color: #fff;
+}
+
+#messages {
+      display: inherit;
+      flex-direction: column;
+      list-style-type: none; 
+      width: 90%;
+}
+
+#typingStatus {
+      background-color: #fff;
+      height: 5%;
+      padding: 0 20px;
+}
+
+::-webkit-scrollbar {
+      width: 8px;      
+}
+
+::-webkit-scrollbar-track {
+      border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #00487C;
+}
+
+.messageText {
+      background-color: #DEF1FE;
+      margin: 2px;
+      padding: 15px 20px;
+      border-radius: 30px;
+      width: 100%;
+}
+
+#robotIcon {
+      font-size: 20px;
+      color: #fff;
+      background-color: #DEF1FE;      
+      border-radius: 30px;
+      width: 50px;      
+      background-color: #4BB3FD;
+      padding: 15px 20px;
+      display: inherit;
+      flex-direction: row;
+      justify-content: center;
+      align-self: flex-start;
+}
+
+.messageDiv {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+}
+
+.messageDiv .messageText {      
+      display: inherit;
+}
